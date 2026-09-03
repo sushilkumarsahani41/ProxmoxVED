@@ -1,4 +1,3 @@
-.vscode/settings.json
 CHANGELOG_MISC.md
 misc/COMPLETION_REPORT.md
 misc/DOCUMENTATION_INDEX.md
@@ -17,3 +16,5 @@ stars.json
 stars.txt
 .DS_Store
 LOCAL_IDEAS.md
+config.bat
+node_modules
