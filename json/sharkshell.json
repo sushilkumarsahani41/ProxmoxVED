@@ -1,0 +1,49 @@
+{
+  "name": "SharkShell",
+  "slug": "sharkshell",
+  "categories": [6, 20],
+  "date_created": "2026-09-05",
+  "type": "ct",
+  "updateable": true,
+  "privileged": false,
+  "interface_port": 80,
+  "documentation": "https://github.com/sushilkumarsahani41/SharkShell#readme",
+  "website": "https://sharkshell.in/",
+  "repository": "https://github.com/sushilkumarsahani41/SharkShell",
+  "architectures": ["amd64"],
+  "platforms": ["pve"],
+  "logo": "https://sharkshell.in/favicon.svg",
+  "description": "SharkShell is a self-hosted web SSH terminal with an encrypted keystore, multi-user organizations, TOTP 2FA, terminal scrollback restore, and a built-in MCP server so AI assistants can manage your servers.",
+  "install_methods": [
+    {
+      "type": "default",
+      "script": "ct/sharkshell.sh",
+      "config_path": "/opt/sharkshell/.env",
+      "resources": {
+        "cpu": 2,
+        "ram": 2048,
+        "hdd": 8,
+        "os": "Debian",
+        "version": "13"
+      }
+    }
+  ],
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [
+    {
+      "text": "The first account you register becomes the organization admin; open registration is disabled automatically afterward.",
+      "type": "info"
+    },
+    {
+      "text": "The upload ceiling defaults to 50GB in both /opt/sharkshell/.env (MAX_UPLOAD_GB) and the nginx client_max_body_size in /etc/nginx/sites-available/sharkshell. Raising it requires editing both, then: systemctl reload nginx && systemctl restart sharkshell.",
+      "type": "warning"
+    },
+    {
+      "text": "Includes a built-in MCP server so AI assistants (Claude, etc.) can manage the servers registered in SharkShell. See the repository's docs/MCP.md for setup.",
+      "type": "info"
+    }
+  ]
+}
